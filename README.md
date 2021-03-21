@@ -26,23 +26,23 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 This technical test consists of:
 
 Indicaciones:
-    - Hola y bienvenido a la prueba técnica. Para esta prueba, necesitamos que
+- Hola y bienvenido a la prueba técnica. Para esta prueba, necesitamos que
     crees un nuevo entorno de Laravel.
-    - Debes crear migraciones para la base de datos, añadiendo usuarios y roles.
+- Debes crear migraciones para la base de datos, añadiendo usuarios y roles.
     Un usuario puede tener varios roles.
-    - Debes crear un comando que añada un usuario específico a la base de datos,
+- Debes crear un comando que añada un usuario específico a la base de datos,
     pasándole nombre y contraseña. Ese usuario debe poder loguearse.
-    - Debes crear los modelos, y los controladores para generar un CRUD que
+- Debes crear los modelos, y los controladores para generar un CRUD que
     gestione esos roles. Se debe poder crear roles, añadir roles a un usuario, o
     quitárselos, mediante un sistema de vistas basado en blade.
-    - Debes enviarnos acceso a un repositorio git a tu elección y tenerlo dispuesto
+- Debes enviarnos acceso a un repositorio git a tu elección y tenerlo dispuesto
     para ser ejecutado en docker.
 
 Plus:
-    - + enviar correo al mail del usuario tras crear su cuenta
-    - + añadir tabla de permisos, pudiendo añadir varios permisos al mismo rol.
-    - + uso de react
-    - + api endpoint que devuelva en json todos los roles.
+- + enviar correo al mail del usuario tras crear su cuenta
+- + añadir tabla de permisos, pudiendo añadir varios permisos al mismo rol.
+- + uso de react
+- + api endpoint que devuelva en json todos los roles.
 
 Tiempo de entrega:
 - ASAP
