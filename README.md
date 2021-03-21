@@ -21,41 +21,71 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Technical Test
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This technical test consists of:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Indicaciones:
+    ‣ Hola y bienvenido a la prueba técnica. Para esta prueba, necesitamos que
+    crees un nuevo entorno de Laravel.
+    ‣ Debes crear migraciones para la base de datos, añadiendo usuarios y roles.
+    Un usuario puede tener varios roles.
+    ‣ Debes crear un comando que añada un usuario específico a la base de datos,
+    pasándole nombre y contraseña. Ese usuario debe poder loguearse.
+    ‣ Debes crear los modelos, y los controladores para generar un CRUD que
+    gestione esos roles. Se debe poder crear roles, añadir roles a un usuario, o
+    quitárselos, mediante un sistema de vistas basado en blade.
+    ‣ Debes enviarnos acceso a un repositorio git a tu elección y tenerlo dispuesto
+    para ser ejecutado en docker.
 
-## Laravel Sponsors
+Plus:
+    ‣ + enviar correo al mail del usuario tras crear su cuenta
+    ‣ + añadir tabla de permisos, pudiendo añadir varios permisos al mismo rol.
+    ‣ + uso de react
+    ‣ + api endpoint que devuelva en json todos los roles.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Tiempo de entrega:
+‣ ASAP
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+## Install
 
-## Contributing
+This project is supported in Docker.
+To deploy this in your local enviroment, follow this steps:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1) Clone the repo
 
-## Code of Conduct
+2) Go to root folder of the project
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3) Assuming you have Docker installed and properly configured, go to a terminal and execute: docker-compose up --build
 
-## Security Vulnerabilities
+4) The first time, database will be empty. To make migrations and seed the database, open another terminal in project's root and execute: docker-compose exec app php artisan migrate:refresh --seed  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+5) Open a browser and go to localhost:8990 to see the app
+
+
+## Use
+
+Initial User) When seeding, a initial user with admin role is created. Credentials are admin@rruger.dev (password: 123456)
+
+General App) The interface is quite self-intuitive. Once logged in, depending on the permissions of the role that your user has, you will be able to perform more or fewer actions.
+
+The actions are grouped in:
+
+- User CRUD
+- Roles CRUD
+- Manage permissions through roles
+
+
+Command) You can create a user using: docker-compose exec app php artisan make:user (no arguments needed, command will ask for the neccesarry arguments) 
+
+API Endpoint) Roles can be fetched calling localhost:8990/api/roles
+
+Email) I used mailtrap.io to simulate an email service. You can change my mailtrap.io credentials editing .env.prod (MAIL_USERNAME MAIL_PASSWORD) and rebuilding
+
+![Alt text](./emailing.png?raw=true "Emails sended by this app")
+
+
 
 ## License
 
