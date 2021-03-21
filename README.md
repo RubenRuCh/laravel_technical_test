@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Technical Test
+# Technical Test
 
 This technical test consists of:
 
@@ -43,31 +43,36 @@ To deploy this in your local enviroment, follow this steps:
 
 2) Go to root folder of the project
 
-3) Assuming you have Docker installed and properly configured, go to a terminal and execute: docker-compose up --build
+3) Assuming you have Docker installed and properly configured, go to a terminal and execute: **docker-compose up --build**
 
-4) The first time, database will be empty. To make migrations and seed the database, open another terminal in project's root and execute: docker-compose exec app php artisan migrate:refresh --seed  
+4) The first time, database will be empty. To make migrations and seed the database, open another terminal in project's root and execute: **docker-compose exec app php artisan migrate:refresh --seed**
 
 5) Open a browser and go to localhost:8990 to see the app
 
 
 ## Use
 
-Initial User) When seeding, a initial user with admin role is created. Credentials are admin@rruger.dev (password: 123456)
+### Initial User
+When seeding, a initial user with admin role is created. Credentials are **admin@rruger.dev** (password: **123456**)
 
-General App) The interface is quite self-intuitive. Once logged in, depending on the permissions of the role that your user has, you will be able to perform more or fewer actions.
+### General App
+The interface is quite self-intuitive. Once logged in, depending on the permissions of the role that your user has, you will be able to perform more or fewer actions.
 
 The actions are grouped in:
 
-- User CRUD
-- Roles CRUD
-- Manage permissions through roles
+- **User CRUD**
+- **Roles CRUD**
+- **Manage permissions through roles**
 
 
-Command) You can create a user using: docker-compose exec app php artisan make:user (no arguments needed, command will ask for the neccesarry arguments) 
+### Command
+You can create a user using: **docker-compose exec app php artisan make:user** (no arguments needed, command will ask for the neccesarry arguments) 
 
-API Endpoint) Roles can be fetched calling localhost:8990/api/roles
+### API Endpoint
+Roles can be fetched calling **localhost:8990/api/roles**
 
-Email) I used mailtrap.io to simulate an email service. You can change my mailtrap.io credentials editing .env.prod (MAIL_USERNAME MAIL_PASSWORD) and rebuilding
+### Email 
+I used mailtrap.io to simulate an email service. You can change my mailtrap.io credentials editing .env.prod (**MAIL_USERNAME** and **MAIL_PASSWORD**) and rebuilding
 
 ![Alt text](./emailing.png?raw=true "Emails sended by this app")
 
